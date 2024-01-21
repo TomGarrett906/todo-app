@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
 :root {
   --gradient: linear-gradient(180deg, rgb(45, 112, 1253) 0%, #163e92 100%);
   --dark: #001747;
@@ -6,16 +8,19 @@
   --grey-light: #eeeeee;
   --grey-dark: #405175;
   --blue: #2d70fd;
-  --green: #00d8a7;
+  --green: #008348;
   --white: #ffffff;
+  --postage: #feff9c;
 }
 
 body {
-  background: var(--gradient);
+  /* background: var(--gradient); */
+  background: url('./images/notepad.png');
+  background-size: cover;
+  background-position: top;
   margin: 0;
   height: 100vh;
-  /* background-color: black; */
-  /* color: rgb(254, 255, 208); */
+  font-family: "Handlee", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -62,13 +67,14 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border-radius: 2rem;
-  background: var(--white);
+  border-radius: 0.1rem;
+  background: var(--postage);
   padding: 3rem;
   height: 50%;
   width: 60%;
   box-shadow: 0 1rem 3rem 1rem rgba(0,23,71,0.15);
   max-width: 30rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.783), 0 6px 20px rgba(0, 0, 0, 0.427);
 }
 
 h2 {
@@ -119,7 +125,6 @@ li {
 #todoList p {
   display: flex;
   gap: 1rem;
-  /* padding-top: 0.25rem; */
   color: var(--dark);
   align-items: center;
 }
@@ -161,7 +166,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .counter {
-  border: 0.06rem solid var(--grey-light);
+  border: 0.06rem solid var(--grey-dark);
 }
 
 .counter-container {
@@ -179,20 +184,20 @@ input[type="checkbox"]:checked::before {
 .counter-container button {
   border: none;
   background-color: transparent;
-  color: var(--grey);
+  color: var(--dark);
   font-size: 1rem;
 }
 
 footer {
   display: flex;
   gap: 1.8rem;
-  background-color: var(--white);
+  background-color: var(--postage);
   padding: 1.2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.783), 0 6px 20px rgba(0, 0, 0, 0.427);
 }
 
 footer:hover {
-  
   transition: 1000ms;
 }
 
@@ -235,4 +240,14 @@ footer:hover {
 
 .scroll::-webkit-scrollbar-track {
   display: none;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width:450px) {
+  ::placeholder {
+    font-size: 12px;
+  }
+  .input button {
+    scale: 90%;
+  }
 }
